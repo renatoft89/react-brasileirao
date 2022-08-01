@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import api from "../services";
-import '../App.css'
 
 function Header() {
   const [clubes, setClubes] = useState([])
   const [pontos, setPontos] = useState([])
   const [escudos, setEscudos] = useState([])
 
-  const serieA = { clubes, pontos, escudos }
   let classificacao = 0;
 
   useEffect(() => {
@@ -26,40 +24,31 @@ function Header() {
 
   return (
     <><div className='Table'>
-      {/* {clubes.map((clube) => {
-    return <p>{clube} </p>;
-  })} */}
-      {/* {pontos.map((ponto) => (<li>{ponto}</li>))}
-  {escudos.map((escudo) => (<img src={escudo} alt='escudo'></img>))} */}
     </div><table>
         <thead>
           <tr>
-            <th>Pts</th>
+            <th>Clubes</th>
+            <th>POS</th>
             <th>clubes</th>
-            {/* <th>Clubes</th> */}
             <th>Pts</th>
           </tr>
         </thead>
         <tbody>
-
-          {clubes.map((clube) => {
-            return <tr>
-              <td>
-                {(classificacao += 1)}
-              </td>
-              <td>
+          {
+            clubes.map((clube, index) => (
+              <tr>
+                <td>
+                  {<img src={escudos[index]} alt={clube}></img>}
+                </td>
+                <td>
+                  {(classificacao += 1)}
+                </td>
                 {clube}
-              </td>
-              {/* {
-              escudos.map((escudo) => {
-                return <td>
-                  <img src={escudo} alt='escudo'></img>
-                </td>;
-              })
-            } */}
-            </tr>;
-          })}
-
+                <td>
+                  {pontos[index]}
+                </td>
+              </tr>))
+          }
         </tbody>
       </table>
     </>
