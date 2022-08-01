@@ -1,11 +1,13 @@
 import Header from './components/Header';
-import Table from './components/Table'
+import Classification from './components/Table';
+
+
 
 function App() {
   return (
     <>
       <Header />
-      <Table />
+      <Classification />
     </>
   );
 }

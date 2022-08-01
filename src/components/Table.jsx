@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import api from "../services";
+import '../styles/style.table.css'
+import Table from 'react-bootstrap/Table';
 
-function Header() {
+function Classification() {
   const [clubes, setClubes] = useState([])
   const [pontos, setPontos] = useState([])
   const [escudos, setEscudos] = useState([])
@@ -23,37 +25,37 @@ function Header() {
   }, []);
 
   return (
-    <><div className='Table'>
-    </div><table>
+    <div className='container-table'>
+      <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Clubes</th>
-            <th>POS</th>
-            <th>clubes</th>
+            <th>Pos</th>
+            <th>Classificação</th>
             <th>Pts</th>
           </tr>
         </thead>
         <tbody>
           {
             clubes.map((clube, index) => (
-              <tr>
-                <td>
+              <tr key={index}>
+                <td className='posicao'>
+                  {(`${classificacao += 1}º`)}
+                </td>
+                <td className='classificacao'>
                   {<img src={escudos[index]} alt={clube}></img>}
+                  <span>
+                    {clube}
+                  </span>
                 </td>
-                <td>
-                  {(classificacao += 1)}
-                </td>
-                {clube}
-                <td>
+                <td className='pontos'>
                   {pontos[index]}
                 </td>
-              </tr>))
-          }
+              </tr>
+            ))}
         </tbody>
-      </table>
-    </>
-
+      </Table>
+    </div>
   );
 }
 
-export default Header;
+export default Classification;
