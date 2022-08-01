@@ -11,6 +11,7 @@ table.table {
   width: 80%;
   background-color: rgba(218, 216, 216, 0.411);
   margin-top: 100px;
+  border-color: #9f95955b;
 }
 
 img {

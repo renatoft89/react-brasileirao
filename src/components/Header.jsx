@@ -3,7 +3,7 @@ import '../styles/style.header.css'
 
 function Header() {
   return (
-    <div class="header">
+    <div className="header">
       <h1>Brasileirão Série A - 2022</h1>
     </div>
   );
