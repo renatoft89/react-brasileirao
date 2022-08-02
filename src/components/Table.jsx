@@ -39,12 +39,12 @@ function Classification() {
           <tr>
             <th>Pos</th>
             <th>Classificação</th>
-            <th>Pts</th>
-            <th>Jogos</th>
-            <th>Vitórias</th>
-            <th>Empates</th>
-            <th>Derrotas</th>
-            <th>Aproveitamento</th>
+            <th>P</th>
+            <th>J</th>
+            <th>V</th>
+            <th>E</th>
+            <th>D</th>
+            <th>A</th>
           </tr>
         </thead>
         <tbody>
