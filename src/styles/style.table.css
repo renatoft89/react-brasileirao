@@ -42,6 +42,8 @@ td:first-child + td + td + td + td {  width: 36px }
 td:first-child + td + td + td + td + td {  width: 36px }
 td:first-child + td + td + td + td + td + td {  width: 36px }
 
+/* #################################MOBILE######################################## */
+
 @media only screen and (max-width: 600px) {
   .container-table {
     width: 100vw;

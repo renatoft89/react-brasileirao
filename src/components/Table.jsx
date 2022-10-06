@@ -76,7 +76,7 @@ function Classification() {
                 <td className='posicao'>
                   {(`${classificacao += 1}º`)}
                 </td>
-                <td className='classificacaos'>
+                <td className='classificacao'>
                   {<img src={escudos[index]} alt={clube}></img>}
                   <span>
                     {clube}
