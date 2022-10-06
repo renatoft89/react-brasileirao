@@ -24,12 +24,22 @@ function Classification() {
     derrotas,
     setDerrotas,
     serie,
+    setSerie
   } = useContext(brContext)
 
   const [loading, setLoading] = useState(true);
 
+  const defineSerie = (serie) => {
+    if (serie === 'a') {
+      setLoading(true)
+      return setSerie('b')
+    }
+    setLoading(true)
+    setSerie('a');
+  }
+
   let classificacao = 0;
-  console.log(serie);
+
   useEffect(() => {
     api
       .get(`/brasileirao/?serie=${serie}`)
@@ -56,7 +66,12 @@ function Classification() {
   }
 
   return (
-    <div className='container-table'>
+      <><button
+      type='button'
+      onClick={() => defineSerie(serie)}
+    >
+      {`Série ${serie.toUpperCase()}`}
+    </button><div className='container-table'>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -104,7 +119,7 @@ function Classification() {
             ))}
           </tbody>
         </Table>
-      </div>
+      </div></>
   );
 }
 
